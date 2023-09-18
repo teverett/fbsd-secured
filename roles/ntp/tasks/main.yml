@@ -2,14 +2,8 @@
   ansible.builtin.lineinfile:
     path: /etc/rc.conf
     line: ntpdate_enable="YES"
-  become: true
-  become_method: su
-  become_user: root
 
 - name: start ntpd
   ansible.builtin.service:
     name: ntpd
     state: started
-  become: true
-  become_method: su
-  become_user: root

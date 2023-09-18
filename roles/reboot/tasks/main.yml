@@ -1,9 +1,6 @@
 
 - name: reboot
   ansible.builtin.reboot:
-  become: true
-  become_method: su
-  become_user: root
-   
+
 - name: Wait 600 seconds for target connection to become reachable/usable
   ansible.builtin.wait_for_connection:

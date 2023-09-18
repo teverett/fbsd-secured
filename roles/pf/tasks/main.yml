@@ -2,17 +2,11 @@
   ansible.builtin.lineinfile:
     path: /etc/rc.conf
     line: pf_enable="YES"
-  become: true
-  become_method: su
-  become_user: root
 
 - name: enable pflog
   ansible.builtin.lineinfile:
     path: /etc/rc.conf
     line: pflog_enable="YES"
-  become: true
-  become_method: su
-  become_user: root
 
 - name: copy pf.conf
   ansible.builtin.copy:
@@ -21,17 +15,11 @@
     owner: root
     group: wheel
     mode: '0644'
-  become: true
-  become_method: su
-  become_user: root
 
 - name: start pf
   ansible.builtin.service:
     name: pf
     state: started
-  become: true
-  become_method: su
-  become_user: root
 
 - name: Wait 600 seconds for target connection to become reachable/usable
   ansible.builtin.wait_for_connection:
@@ -40,8 +28,6 @@
   ansible.builtin.service:
     name: pflog
     state: started
-  become: true
-  become_method: su
-  become_user: root
+
 
 

@@ -1,29 +1,17 @@
 - name: install java
   ansible.builtin.command: pkg install -y openjdk19
-  become: true
-  become_method: su
-  become_user: root
 
 - name: add fdesc fs
   ansible.builtin.lineinfile:
     path: /etc/fstab
     line: 'fdesc   /dev/fd         fdescfs         rw      0       0'
-  become: true
-  become_method: su
-  become_user: root
 
 - name: add proc fs
   ansible.builtin.lineinfile:
     path: /etc/fstab
     line: 'proc    /proc           procfs          rw      0       0'
-  become: true
-  become_method: su
-  become_user: root
 
 - name: mount procfs and fdescfs
   ansible.builtin.command: mount -a
-  become: true
-  become_method: su
-  become_user: root
 
 

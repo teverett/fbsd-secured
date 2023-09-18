@@ -11,9 +11,6 @@
     path: /var/tmp
     state: absent
   when: test.stat is defined and test.stat.islnk is not defined
-  become: true
-  become_method: su
-  become_user: root
 
 - name: link /var/tmp to /tmp
   ansible.builtin.file:

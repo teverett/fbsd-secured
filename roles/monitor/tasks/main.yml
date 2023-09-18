@@ -1,0 +1,12 @@
+- name: install node_exporter
+  ansible.builtin.command: pkg install -y node_exporter
+
+- name: enable node_exporter
+  ansible.builtin.lineinfile:
+    path: /etc/rc.conf
+    line: node_exporter_enable=”YES”
+
+- name: start node_exporter
+  ansible.builtin.service:
+    name: node_exporter
+    state: started

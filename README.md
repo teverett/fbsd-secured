@@ -7,11 +7,11 @@ freebsd-h is an [Ansible](https://www.ansible.com/) playbook which provides incr
 
 * Restricting cron configurations to root
 * Making key files accessible only by root
-* Network hardening including blackhole
-* pfsense firewall
+* Network hardening including [blackhole](https://man.freebsd.org/cgi/man.cgi?query=blackhole)
+* pf firewall
 * Disabling inetd, NFS, and sendmail
-* clearing /tmp and /var/tmp on reboot
-* firewalling IP6
+* Clearing /tmp and /var/tmp on reboot
+* Firewalling IP6
 
 ## License
 

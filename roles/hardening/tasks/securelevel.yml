@@ -1,0 +1,9 @@
+- name: enable kernel security level
+  ansible.builtin.lineinfile:
+    path: /etc/rc.conf
+    line: kern_securelevel_enable="YES"
+
+- name: set kernel security level
+  ansible.builtin.lineinfile:
+    path: /etc/rc.conf
+    line: kern_securelevel="2"

@@ -13,6 +13,7 @@ freebsd-h is an [Ansible](https://www.ansible.com/) playbook which provides incr
 * Clearing /tmp and /var/tmp on reboot
 * Firewalling IP6
 * ALSR, PIE and WX
+* Kernel [securelevel](https://man.freebsd.org/cgi/man.cgi?query=securelevel&apropos=0&sektion=0&manpath=FreeBSD+13.2-RELEASE&arch=default&format=html) 2
 
 ## License
 

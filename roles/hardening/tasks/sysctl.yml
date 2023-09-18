@@ -42,9 +42,13 @@
     line: net.inet.icmp.bmcastecho=0
 
 # https://docs.freebsd.org/en/books/handbook/security/  
-- name: disable users from seeing other's uids
+- name: disable users from seeing other's processes
   ansible.builtin.lineinfile:
     path: /etc/sysctl.conf
     line: security.bsd.see_other_uids=0
 
-  
+# https://docs.freebsd.org/en/books/handbook/security/  
+- name: disable users from seeing other group's processes
+  ansible.builtin.lineinfile:
+    path: /etc/sysctl.conf
+    line: security.bsd.see_other_gids=0

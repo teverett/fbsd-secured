@@ -20,7 +20,7 @@
   become_method: su
   become_user: root
 
-- name: install java
+- name: mount procfs and fdescfs
   ansible.builtin.command: mount -a
   become: true
   become_method: su

@@ -38,13 +38,15 @@ freebsd-h uses ideas from these sites:
 * https://www.zenarmor.com/docs/freebsd-tutorials/best-practices-for-freebsd-security
 * https://forums.freebsd.org/threads/my-freebsd-hardening-script.89523/
    
-## Rerequsites (OS X)
+## Prererequsites
 
-`brew install ansible`
+### Client (OS X)
 
-`brew tap esolitos/ipa`
+* `brew install ansible`
+* `brew tap esolitos/ipa`
+* `brew install esolitos/ipa/sshpass`
 
-`brew install esolitos/ipa/sshpass`
+### Host (FreeBSD)
 
 * A user account 'ansible' in the group 'wheel' is required.  Use a strong password and disable the account after the host is configured.
 * Host IP's are in the file "inventory"

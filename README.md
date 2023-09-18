@@ -4,7 +4,9 @@
 ## Rerequsites
 
 `brew install ansible`
+
 `brew tap esolitos/ipa`
+
 `brew install esolitos/ipa/sshpass`
 
 A user account 'ansible' in the group 'wheel' in required

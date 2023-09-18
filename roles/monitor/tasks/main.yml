@@ -11,3 +11,20 @@
   ansible.builtin.service:
     name: node_exporter
     state: started
+
+- name: enable node_exporter traffic in pf
+  ansible.builtin.lineinfile:
+    path: /etc/pf.conf
+    line: 'pass in proto tcp to port { 9100 }'
+    insertafter: '# -- incremental pass rules --'
+
+- name: enable node_exporter traffic in pf (comment)
+  ansible.builtin.lineinfile:
+    path: /etc/pf.conf
+    line: '# enable node_exporter'
+    insertafter: '# -- incremental pass rules --'
+
+- name: restart pf
+  ansible.builtin.service:
+    name: pf
+    state: restarted

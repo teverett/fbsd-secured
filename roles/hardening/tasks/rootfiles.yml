@@ -6,6 +6,14 @@
     group: wheel
     mode: '0710'
 
+- name: create /etc/rc.local
+  ansible.builtin.file:
+    path: '/etc/rc.local'
+    mode: '0710'
+    owner: root
+    group: wheel
+    state: touch
+
 #https://gist.github.com/jahil/4565d8dfa06254f0c11d
 - name: set permissions on root-only files
   ansible.builtin.file:

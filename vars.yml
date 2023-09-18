@@ -25,4 +25,6 @@ rootfiles:
   - '/usr/bin/atrm'
   - '/usr/bin/batch'
   - '/var/log'
+  - '/etc/rc.local'
+  
     

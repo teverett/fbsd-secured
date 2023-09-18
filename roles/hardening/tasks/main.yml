@@ -10,7 +10,10 @@
 
 - name: include cron hardening
   ansible.builtin.include_tasks: cron.yml
-  
+
+- name: include loader hardening
+  ansible.builtin.include_tasks: loader.yml
+
 #- name: include /tmp hardening
 #  ansible.builtin.include_tasks: tmp.yml
   

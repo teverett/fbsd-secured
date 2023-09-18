@@ -12,6 +12,7 @@ freebsd-h is an [Ansible](https://www.ansible.com/) playbook which provides incr
 * Disabling inetd, NFS, and sendmail
 * Clearing /tmp and /var/tmp on reboot
 * Firewalling IP6
+* ALSR, PIE and WX
 
 ## License
 
@@ -27,6 +28,7 @@ freebsd-h uses ideas from these sites:
 
 * https://docs.freebsd.org/en/books/handbook/security/
 * https://gist.github.com/jahil/4565d8dfa06254f0c11d
+* https://www.unitedbsd.com/d/1093-freebsd-hardening-script
    
 ## Rerequsites (OS X)
 

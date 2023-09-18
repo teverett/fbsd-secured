@@ -9,7 +9,7 @@
 
 `brew install esolitos/ipa/sshpass`
 
-A user account 'ansible' in the group 'wheel' in required
+A user account 'ansible' in the group 'wheel' is required
 
 host IP's are in the file "inventory"
 

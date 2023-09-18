@@ -6,7 +6,7 @@
     group: wheel
     mode: '0710'
 
-- name: create /etc/rc.local
+- name: touch /etc/rc.local
   ansible.builtin.file:
     path: '/etc/rc.local'
     mode: '0710'

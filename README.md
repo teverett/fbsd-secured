@@ -15,6 +15,7 @@ freebsd-h is an [Ansible](https://www.ansible.com/) playbook which provides incr
 * ALSR, PIE and WX
 * Kernel [securelevel](https://man.freebsd.org/cgi/man.cgi?query=securelevel&apropos=0&sektion=0&manpath=FreeBSD+13.2-RELEASE&arch=default&format=html) 2
 * Blowfish password encryption
+* [node_exporter](https://github.com/prometheus/node_exporter) enabled
 
 ## License
 
@@ -35,6 +36,7 @@ freebsd-h uses ideas from these sites:
 * http://defcon1.org/html/Security/Secure-Guide/secure-guide.html
 * https://fleximus.org/howto/secure-freebsd
 * https://www.zenarmor.com/docs/freebsd-tutorials/best-practices-for-freebsd-security
+* https://forums.freebsd.org/threads/my-freebsd-hardening-script.89523/
    
 ## Rerequsites (OS X)
 

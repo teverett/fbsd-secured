@@ -45,4 +45,10 @@
     path: /etc/rc.conf
     line: dumpdev="NO"
     regex: ^dumpdev
+
+- name: don't update MOTD on boot
+  ansible.builtin.lineinfile:
+    path: /etc/rc.conf
+    line: update_motd="NO"
+    regex: ^update_motd
   

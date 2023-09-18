@@ -34,6 +34,7 @@ freebsd-h uses ideas from these sites:
 * https://bsdadventures.com/harden-freebsd/
 * http://defcon1.org/html/Security/Secure-Guide/secure-guide.html
 * https://fleximus.org/howto/secure-freebsd
+* https://www.zenarmor.com/docs/freebsd-tutorials/best-practices-for-freebsd-security
    
 ## Rerequsites (OS X)
 

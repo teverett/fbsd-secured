@@ -1,0 +1,6 @@
+- name: init package system by installing fish
+  ansible.builtin.command: pkg install -y fish
+  become: true
+  become_method: su
+  become_user: root
+

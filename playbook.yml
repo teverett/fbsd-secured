@@ -3,6 +3,11 @@
 - hosts: all
   roles:
     - pf
+    - pkg
     - ntp
-    
+    - sendmail
+    - hardening
+
+
+
   

@@ -8,10 +8,10 @@
     - vars.yml
   roles:
     - pf
-    - pkg
     - ntp
     - hardening
-    - java
     - monitor
+    - pkg
+    - java
     - reboot
 

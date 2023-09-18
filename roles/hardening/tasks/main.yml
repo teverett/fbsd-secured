@@ -5,9 +5,6 @@
 - name: include sysctl changes
   ansible.builtin.include_tasks: sysctl.yml
 
-- name: include root-only files
-  ansible.builtin.include_tasks: rootfiles.yml
-
 - name: include cron hardening
   ansible.builtin.include_tasks: cron.yml
 
@@ -19,6 +16,9 @@
 
 - name: include login hardening
   ansible.builtin.include_tasks: login.yml
+
+- name: include root-only files
+  ansible.builtin.include_tasks: rootfiles.yml
 
 #- name: include /tmp hardening
 #  ansible.builtin.include_tasks: tmp.yml

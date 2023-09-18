@@ -45,4 +45,68 @@
   become: true
   become_method: su
   become_user: root
+
+
+# https://docs.freebsd.org/en/books/handbook/security/
+- name: blackhole tcp
+  ansible.builtin.lineinfile:
+    path: /etc/sysctl.conf
+    line: net.inet.tcp.blackhole=2
+  become: true
+  become_method: su
+  become_user: root
+
+# https://docs.freebsd.org/en/books/handbook/security/  
+- name: blackhole udp
+  ansible.builtin.lineinfile:
+    path: /etc/sysctl.conf
+    line: net.inet.udp.blackhole=1
+  become: true
+  become_method: su
+  become_user: root  
+
+# https://docs.freebsd.org/en/books/handbook/security/  
+- name: disable icmp redirect
+  ansible.builtin.lineinfile:
+    path: /etc/sysctl.conf
+    line: net.inet.icmp.drop_redirect=1
+  become: true
+  become_method: su
+  become_user: root  
+
+# https://docs.freebsd.org/en/books/handbook/security/  
+- name: disable ip redirect
+  ansible.builtin.lineinfile:
+    path: /etc/sysctl.conf
+    line: net.inet.ip.redirect=0
+  become: true
+  become_method: su
+  become_user: root  
+
+# https://docs.freebsd.org/en/books/handbook/security/  
+- name: disable source routing (1)
+  ansible.builtin.lineinfile:
+    path: /etc/sysctl.conf
+    line: net.inet.ip.sourceroute=0
+  become: true
+  become_method: su
+  become_user: root  
+
+# https://docs.freebsd.org/en/books/handbook/security/  
+- name: disable source routing (2)
+  ansible.builtin.lineinfile:
+    path: /etc/sysctl.conf
+    line: net.inet.ip.accept_sourceroute=0
+  become: true
+  become_method: su
+  become_user: root  
+
+# https://docs.freebsd.org/en/books/handbook/security/  
+- name: don't echo broadcasts
+  ansible.builtin.lineinfile:
+    path: /etc/sysctl.conf
+    line: net.inet.icmp.bmcastecho=0
+  become: true
+  become_method: su
+  become_user: root  
   

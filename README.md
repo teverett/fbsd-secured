@@ -3,7 +3,7 @@
 
 ## Introduction
 
-freebsd-h is an Ansible playbook which provides incremental security to FreeBSD systems including:
+freebsd-h is an [Ansible](https://www.ansible.com/) playbook which provides incremental security to [FreeBSD](https://www.freebsd.org/) systems including:
 
 * Restricting cron configurations to root
 * Making key files accessible only by root

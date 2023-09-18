@@ -4,13 +4,14 @@
 - name: enable node_exporter
   ansible.builtin.lineinfile:
     path: /etc/rc.conf
-    line: node_exporter_enable=”YES”
+    line: node_exporter_enable=YES
     regex: ^node_exporter_enable
 
 - name: start node_exporter
   ansible.builtin.service:
     name: node_exporter
     state: started
+    enabled: true
 
 - name: enable node_exporter traffic in pf
   ansible.builtin.lineinfile:

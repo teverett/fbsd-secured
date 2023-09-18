@@ -1,0 +1,23 @@
+
+# https://gist.github.com/jahil/4565d8dfa06254f0c11d
+
+- name: stat /var/tmp
+  ansible.builtin.stat:
+    path: /var/tmp
+  register: test
+
+- name: remove /var/tmp
+  ansible.builtin.file:
+    path: /var/tmp
+    state: absent
+  when: test.stat is defined and test.stat.islnk is not defined
+  become: true
+  become_method: su
+  become_user: root
+
+- name: link /var/tmp to /tmp
+  ansible.builtin.file:
+    src: /var/tmp/
+    dest: /tmp
+    state: link
+

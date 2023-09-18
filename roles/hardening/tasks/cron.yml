@@ -1,0 +1,41 @@
+#https://gist.github.com/jahil/4565d8dfa06254f0c11d
+- name: only root can schedule cron jobs
+  ansible.builtin.lineinfile:
+    path: /var/cron/allow
+    line: root
+    create: true
+  become: true
+  become_method: su
+  become_user: root
+
+#https://gist.github.com/jahil/4565d8dfa06254f0c11d
+- name: set permissions on /var/cron/allow to root only
+  ansible.builtin.file:
+    path: /var/cron/allow
+    owner: root
+    group: wheel
+    mode: 'o='
+  become: true
+  become_method: su
+  become_user: root 
+
+#https://gist.github.com/jahil/4565d8dfa06254f0c11d
+- name: only root can schedule at jobs
+  ansible.builtin.lineinfile:
+    path: /var/at/at.allow
+    line: root
+    create: true
+  become: true
+  become_method: su
+  become_user: root
+
+  #https://gist.github.com/jahil/4565d8dfa06254f0c11d
+- name: set permissions on /var/at/at.allow to root only
+  ansible.builtin.file:
+    path: /var/at/at.allow
+    owner: root
+    group: wheel
+    mode: 'o='
+  become: true
+  become_method: su
+  become_user: root 

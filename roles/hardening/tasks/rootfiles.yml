@@ -1,0 +1,21 @@
+#https://gist.github.com/jahil/4565d8dfa06254f0c11d
+- name: set permissions on root to root only
+  ansible.builtin.file:
+    path: /root
+    owner: root
+    group: wheel
+    mode: '0710'
+  become: true
+  become_method: su
+  become_user: root 
+
+#https://gist.github.com/jahil/4565d8dfa06254f0c11d
+- name: set permissions on root-only files
+  ansible.builtin.file:
+    path: "{{ item }}"
+    mode: 'o='
+  with_items: "{{ rootfiles }}"
+  become: true
+  become_method: su
+  become_user: root 
+  

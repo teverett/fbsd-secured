@@ -1,0 +1,48 @@
+- name: clean tmp on boot
+  ansible.builtin.lineinfile:
+    path: /etc/rc.conf
+    line: clear_tmp_enable="YES"
+  become: true
+  become_method: su
+  become_user: root
+
+- name: disable sendmail
+  ansible.builtin.lineinfile:
+    path: /etc/rc.conf
+    line: sendmail_enable=”NO”
+  become: true
+  become_method: su
+  become_user: root
+
+- name: disable inetd
+  ansible.builtin.lineinfile:
+    path: /etc/rc.conf
+    line: inetd_enable=”NO”
+  become: true
+  become_method: su
+  become_user: root
+
+- name: disable NFS server
+  ansible.builtin.lineinfile:
+    path: /etc/rc.conf
+    line: nfs_server_enable=”NO”
+  become: true
+  become_method: su
+  become_user: root
+
+- name: disable NFS client
+  ansible.builtin.lineinfile:
+    path: /etc/rc.conf
+    line: nfs_client_enable=”NO”
+  become: true
+  become_method: su
+  become_user: root
+
+- name: disable portmap
+  ansible.builtin.lineinfile:
+    path: /etc/rc.conf
+    line: portmap_enable=”NO”
+  become: true
+  become_method: su
+  become_user: root
+  

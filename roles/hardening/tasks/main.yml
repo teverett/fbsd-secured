@@ -109,4 +109,12 @@
   become: true
   become_method: su
   become_user: root  
-  
+
+# https://docs.freebsd.org/en/books/handbook/security/  
+- name: disable users from seeing other's uids
+  ansible.builtin.lineinfile:
+    path: /etc/sysctl.conf
+    line: security.bsd.see_other_uids=0
+  become: true
+  become_method: su
+  become_user: root  

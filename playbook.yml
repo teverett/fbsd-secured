@@ -5,8 +5,8 @@
     - pf
     - pkg
     - ntp
-    - sendmail
     - hardening
+    - java
 
 
 

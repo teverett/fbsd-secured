@@ -46,9 +46,9 @@ freebsd-h uses ideas from these sites:
 
 `brew install esolitos/ipa/sshpass`
 
-A user account 'ansible' in the group 'wheel' is required.  Use a strong password and disable the account after the host is configured.
-
-host IP's are in the file "inventory"
+* A user account 'ansible' in the group 'wheel' is required.  Use a strong password and disable the account after the host is configured.
+* Host IP's are in the file "inventory"
+* FreeBSD host has python installed (`pkg install python`)
 
 ## Usage
 

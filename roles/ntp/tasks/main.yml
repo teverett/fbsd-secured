@@ -2,6 +2,7 @@
   ansible.builtin.lineinfile:
     path: /etc/rc.conf
     line: ntpdate_enable="YES"
+    regex: ^ntpdate_enable
 
 - name: start ntpd
   ansible.builtin.service:

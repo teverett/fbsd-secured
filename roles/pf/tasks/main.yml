@@ -2,11 +2,13 @@
   ansible.builtin.lineinfile:
     path: /etc/rc.conf
     line: pf_enable="YES"
+    regex: ^pf_enable
 
 - name: enable pflog
   ansible.builtin.lineinfile:
     path: /etc/rc.conf
     line: pflog_enable="YES"
+    regex: ^pflog_enable
 
 - name: copy pf.conf
   ansible.builtin.copy:

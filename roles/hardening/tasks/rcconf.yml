@@ -2,38 +2,47 @@
   ansible.builtin.lineinfile:
     path: /etc/rc.conf
     line: clear_tmp_enable="YES"
+    regex: ^clear_tmp_enable
 
 - name: disable sendmail
   ansible.builtin.lineinfile:
     path: /etc/rc.conf
     line: sendmail_enable=”NONE”
+    regex: ^sendmail_enable
 
 - name: disable inetd
   ansible.builtin.lineinfile:
     path: /etc/rc.conf
-    line: inetd_enable=”NO”
+    line: inetd_enable=””
+    regex: ^inetd_enable
 
 - name: disable NFS server
   ansible.builtin.lineinfile:
     path: /etc/rc.conf
     line: nfs_server_enable=”NO”
+    regex: ^nfs_server_enable
 
 - name: disable NFS client
   ansible.builtin.lineinfile:
     path: /etc/rc.conf
     line: nfs_client_enable=”NO”
+    regex: ^nfs_client_enable
 
 - name: disable portmap
   ansible.builtin.lineinfile:
     path: /etc/rc.conf
     line: portmap_enable=”NO”
+    regex: ^portmap_enable
 
 - name: disable syslog logging to network
   ansible.builtin.lineinfile:
     path: /etc/rc.conf
     line: syslogd_flags=”-ss”
+    regex: ^syslogd_flags
 
-
-
-
+- name: disable dumpdev
+  ansible.builtin.lineinfile:
+    path: /etc/rc.conf
+    line: dumpdev="NO"
+    regex: ^dumpdev
   

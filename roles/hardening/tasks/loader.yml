@@ -2,28 +2,34 @@
   ansible.builtin.lineinfile:
     path: /boot/loader.conf
     line: kern.elf32.allow_wx=0
+    regex: ^kern.elf32.allow_wx
 
 - name: enable wx (elf64)
   ansible.builtin.lineinfile:
     path: /boot/loader.conf
     line: kern.elf64.allow_wx=0
+    regex: ^kern.elf64.allow_wx
 
 - name: enable alsr (elf32)
   ansible.builtin.lineinfile:
     path: /boot/loader.conf
     line: kern.elf32.aslr.enable=1
+    regex: ^kern.elf32.aslr.enable
 
 - name: enable alsr (elf64)
   ansible.builtin.lineinfile:
     path: /boot/loader.conf
     line: kern.elf64.aslr.enable=1
+    regex: ^kern.elf64.aslr.enable
 
 - name: enable pie (elf32)
   ansible.builtin.lineinfile:
     path: /boot/loader.conf
     line: kern.elf32.aslr.pie_enable=1
+    regex: ^kern.elf32.aslr.pie_enable
 
 - name: enable pie (elf64)
   ansible.builtin.lineinfile:
     path: /boot/loader.conf
-    line: kern.elf32.allow_wx=0
+    line: kern.elf64.aslr.pie_enable=1
+    regex: ^kern.elf64.aslr.pie_enable

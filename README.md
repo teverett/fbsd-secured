@@ -5,14 +5,15 @@
 
 freebsd-h is an [Ansible](https://www.ansible.com/) playbook which provides incremental security to [FreeBSD](https://www.freebsd.org/) systems including:
 
-* Restricting cron configurations to root
 * Making key files accessible only by root
 * Network hardening including [blackhole](https://man.freebsd.org/cgi/man.cgi?query=blackhole)
 * pf firewall
-* Disabling inetd, NFS, and sendmail
-* Clearing /tmp and /var/tmp on reboot
+* Disabling inetd abd NFS
+* sendmail in queue mode
+* Clearing /tmp on reboot
 * Firewalling IP6
 * ALSR, PIE and WX
+* Restricting cron configurations to root
 * Kernel [securelevel](https://man.freebsd.org/cgi/man.cgi?query=securelevel&apropos=0&sektion=0&manpath=FreeBSD+13.2-RELEASE&arch=default&format=html) 2
 * Blowfish password encryption
 * [node_exporter](https://github.com/prometheus/node_exporter) enabled
@@ -37,6 +38,7 @@ freebsd-h uses ideas from these sites:
 * https://fleximus.org/howto/secure-freebsd
 * https://www.zenarmor.com/docs/freebsd-tutorials/best-practices-for-freebsd-security
 * https://forums.freebsd.org/threads/my-freebsd-hardening-script.89523/
+* https://forums.freebsd.org/threads/correct-way-of-securing-tmp-and-var-tmp-in-freebsd.30864/
    
 ## Prererequsites
 

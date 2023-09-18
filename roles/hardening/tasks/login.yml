@@ -1,0 +1,9 @@
+- name: set blowfish password encryption
+  ansible.builtin.lineinfile:
+    path: /etc/login.conf
+    line: '        :passwd_format=blf:\'
+    search_string: '        :passwd_format=sha512:\'
+
+- name: rebuild login database
+  ansible.builtin.command: cap_mkdb /etc/login.conf
+

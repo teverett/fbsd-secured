@@ -17,6 +17,9 @@
 - name: include security level
   ansible.builtin.include_tasks: securelevel.yml
 
+- name: include login hardening
+  ansible.builtin.include_tasks: login.yml
+
 #- name: include /tmp hardening
 #  ansible.builtin.include_tasks: tmp.yml
   

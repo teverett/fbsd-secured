@@ -1,6 +1,8 @@
 ---
 
 - hosts: all
+  vars_files:
+    - vars.yml
   roles:
     - pf
     - pkg
@@ -8,5 +10,3 @@
     - hardening
     - java
     - reboot
-
- 

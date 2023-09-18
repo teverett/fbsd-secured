@@ -1,0 +1,28 @@
+
+#https://gist.github.com/jahil/4565d8dfa06254f0c11d
+
+rootfiles:
+  - '/etc/fstab'
+  - '/etc/ftpusers'
+  - '/etc/group'
+  - '/etc/hosts'
+  - '/etc/hosts.allow'
+  - '/etc/hosts.equiv'
+  - '/etc/hosts.lpd'
+  - '/etc/inetd.conf'
+  - '/etc/login.access'
+  - '/etc/login.conf'
+  - '/etc/newsyslog.conf'
+  - '/etc/rc.conf'
+  - '/etc/ssh/sshd_config'
+  - '/etc/sysctl.conf'
+  - '/etc/syslog.conf'
+  - '/etc/ttys'
+  - '/etc/crontab'
+#  - '/usr/bin/crontab'
+  - '/usr/bin/at'
+  - '/usr/bin/atq'
+  - '/usr/bin/atrm'
+  - '/usr/bin/batch'
+  - '/var/log'
+    

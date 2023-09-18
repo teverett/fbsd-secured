@@ -6,7 +6,6 @@
     group: wheel
     mode: '0710'
 
-
 #https://gist.github.com/jahil/4565d8dfa06254f0c11d
 - name: set permissions on root-only files
   ansible.builtin.file:

@@ -25,10 +25,9 @@ freebsd-h is provided as-is. freebsd-h is intended as an example of configuratio
 
 freebsd-h uses ideas from these sites:
 
+* https://docs.freebsd.org/en/books/handbook/security/
 * https://gist.github.com/jahil/4565d8dfa06254f0c11d
-* https://docs.freebsd.org/en/books/handbook/security/  
-
-
+   
 ## Rerequsites (OS X)
 
 `brew install ansible`

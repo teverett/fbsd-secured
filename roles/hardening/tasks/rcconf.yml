@@ -6,7 +6,7 @@
 - name: disable sendmail
   ansible.builtin.lineinfile:
     path: /etc/rc.conf
-    line: sendmail_enable=”NO”
+    line: sendmail_enable=”NONE”
 
 - name: disable inetd
   ansible.builtin.lineinfile:
@@ -27,5 +27,13 @@
   ansible.builtin.lineinfile:
     path: /etc/rc.conf
     line: portmap_enable=”NO”
+
+- name: disable syslog logging to network
+  ansible.builtin.lineinfile:
+    path: /etc/rc.conf
+    line: syslogd_flags=”-ss”
+
+
+
 
   

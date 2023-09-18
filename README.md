@@ -30,6 +30,7 @@ freebsd-h uses ideas from these sites:
 * https://docs.freebsd.org/en/books/handbook/security/
 * https://gist.github.com/jahil/4565d8dfa06254f0c11d
 * https://www.unitedbsd.com/d/1093-freebsd-hardening-script
+* https://bsdadventures.com/harden-freebsd/
    
 ## Rerequsites (OS X)
 

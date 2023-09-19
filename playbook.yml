@@ -4,6 +4,12 @@
   become: true
   become_method: su
   become_user: root
+  gather_facts: no
+  pre_tasks:
+  - name: install python
+    raw: 'pkg install -y python'
+    args:
+      executable: /bin/sh
   vars_files:
     - vars.yml
   roles:

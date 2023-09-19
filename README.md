@@ -50,9 +50,8 @@ fbsd-secured uses ideas from these sites:
 
 ### Host (FreeBSD)
 
-* A user account 'ansible' in the group 'wheel' is required.  Use a strong password and disable the account after the host is configured.
+* A user account 'ansible' in the group 'wheel' is required.  Use a strong password and disable the account after the host is configured.  A one-time ssh login to this account is required before running ansible, to accept the host key
 * Host IP's are in the file "inventory"
-* FreeBSD host has python installed (`pkg install python`)
 
 ## Usage
 

@@ -31,3 +31,6 @@ packages:
   - sudo
   - fish
   - screen
+  - bash
+
+user: tom

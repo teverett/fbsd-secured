@@ -1,5 +1,5 @@
-- name: init package system by installing fish
-  ansible.builtin.command: pkg install -y fish
 
-- name: install sudo
-  ansible.builtin.command: pkg install -y sudo
+- name: install standard packages
+  ansible.builtin.command:
+    cmd: "pkg install -y {{ item }}"
+  with_items: "{{ packages }}"

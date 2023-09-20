@@ -26,5 +26,8 @@ rootfiles:
   - '/usr/bin/batch'
   - '/var/log'
   - '/etc/rc.local'
-  
-    
+
+packages:
+  - sudo
+  - fish
+  - screen

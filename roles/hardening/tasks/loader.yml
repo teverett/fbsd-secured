@@ -1,8 +1,11 @@
-- name: enable wx (elf32)
-  ansible.builtin.lineinfile:
-    path: /boot/loader.conf
-    line: kern.elf32.allow_wx=0
-    regex: ^kern.elf32.allow_wx
+
+# wx elf32 appears to break OpenJDK
+
+#- name: enable wx (elf32)
+#  ansible.builtin.lineinfile:
+#    path: /boot/loader.conf
+#    line: kern.elf32.allow_wx=0
+#    regex: ^kern.elf32.allow_wx
 
 - name: enable wx (elf64)
   ansible.builtin.lineinfile:

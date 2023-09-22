@@ -4,11 +4,23 @@
     line: pf_enable="YES"
     regex: ^pf_enable
 
+- name: location of pf.conf
+  ansible.builtin.lineinfile:
+    path: /etc/rc.conf
+    line: pf_rules="/etc/pf.conf"
+    regex: ^pf_rules
+
 - name: enable pflog
   ansible.builtin.lineinfile:
     path: /etc/rc.conf
     line: pflog_enable="YES"
     regex: ^pflog_enable
+
+- name: location of pflog
+  ansible.builtin.lineinfile:
+    path: /etc/rc.conf
+    line: pflog_logfile="/var/log/pflog"
+    regex: ^pflog_logfile
 
 - name: copy pf.conf
   ansible.builtin.copy:
@@ -16,7 +28,7 @@
     dest: /etc/pf.conf
     owner: root
     group: wheel
-    mode: '0644'
+    mode: '0600'
 
 - name: start pf
   ansible.builtin.service:

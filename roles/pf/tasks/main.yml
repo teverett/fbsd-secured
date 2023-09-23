@@ -38,6 +38,7 @@
   ansible.builtin.command:
     cmd: "pfctl -e"
   ignore_errors: true
+  no_log: true
   async: 60
   poll: 2
 

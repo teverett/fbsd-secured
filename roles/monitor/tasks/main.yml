@@ -16,7 +16,7 @@
 - name: enable node_exporter traffic in pf
   ansible.builtin.lineinfile:
     path: /etc/pf.conf
-    line: 'pass in proto tcp to port { 9100 }'
+    line: 'pass in proto tcp from <rfc1918> to port { 9100 }'
     insertafter: '# -- incremental pass rules --'
 
 - name: enable node_exporter traffic in pf (comment)

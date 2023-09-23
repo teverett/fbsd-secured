@@ -8,7 +8,7 @@ fbsd-secured is an [Ansible](https://www.ansible.com/) playbook which provides i
 * Making key files accessible only by root
 * Network hardening including [blackhole](https://man.freebsd.org/cgi/man.cgi?query=blackhole)
 * pf firewall
-* Disabling inetd abd NFS
+* Disabling inetd and NFS
 * sendmail in queue mode
 * Clearing /tmp on reboot
 * Firewalling IP6

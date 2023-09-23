@@ -32,13 +32,14 @@
 
 - name: load pf kernel module
   ansible.builtin.command:
-    cmd: "kldload pf"
+    cmd: "kldload -n pf"
 
 - name: enable pf
   ansible.builtin.command:
     cmd: "pfctl -e"
-  async: 45
-  poll: 5
+  ignore_errors: true
+  async: 60
+  poll: 2
 
 - name: Reset ssh connection
   ansible.builtin.meta: reset_connection

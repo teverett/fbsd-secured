@@ -4,88 +4,96 @@
   ansible.builtin.lineinfile:
     path: /etc/sysctl.conf
     line: net.inet.tcp.blackhole=2
-    regex: ^net.inet.tcp.blackhole
+    regex: net.inet.tcp.blackhole
 
 # https://docs.freebsd.org/en/books/handbook/security/  
 - name: blackhole udp
   ansible.builtin.lineinfile:
     path: /etc/sysctl.conf
     line: net.inet.udp.blackhole=1
-    regex: ^net.inet.udp.blackhole
+    regex: net.inet.udp.blackhole
 
 # https://docs.freebsd.org/en/books/handbook/security/  
 - name: disable icmp redirect
   ansible.builtin.lineinfile:
     path: /etc/sysctl.conf
     line: net.inet.icmp.drop_redirect=1
-    regex: ^net.inet.icmp.drop_redirect
+    regex: net.inet.icmp.drop_redirect
 
 # https://docs.freebsd.org/en/books/handbook/security/  
 - name: disable ip redirect
   ansible.builtin.lineinfile:
     path: /etc/sysctl.conf
     line: net.inet.ip.redirect=0
-    regex: ^net.inet.ip.redirect
+    regex: net.inet.ip.redirect
 
 # https://docs.freebsd.org/en/books/handbook/security/  
 - name: disable source routing (1)
   ansible.builtin.lineinfile:
     path: /etc/sysctl.conf
     line: net.inet.ip.sourceroute=0
-    regex: ^net.inet.ip.sourceroute
+    regex: net.inet.ip.sourceroute
 
 # https://docs.freebsd.org/en/books/handbook/security/  
 - name: disable source routing (2)
   ansible.builtin.lineinfile:
     path: /etc/sysctl.conf
     line: net.inet.ip.accept_sourceroute=0
-    regex: ^net.inet.ip.accept_sourceroute
+    regex: net.inet.ip.accept_sourceroute
 
 # https://docs.freebsd.org/en/books/handbook/security/  
 - name: don't echo broadcasts
   ansible.builtin.lineinfile:
     path: /etc/sysctl.conf
     line: net.inet.icmp.bmcastecho=0
-    regex: ^net.inet.icmp.bmcastecho
+    regex: net.inet.icmp.bmcastecho
+
+# https://forums.freebsd.org/threads/system-hardening-options-post-install.75476/ 
+- name: disable users from seeing jail processes
+  ansible.builtin.lineinfile:
+    path: /etc/sysctl.conf
+    line: security.bsd.see_jail_proc=0
+    regex: security.bsd.see_jail_proc
 
 # https://docs.freebsd.org/en/books/handbook/security/  
 - name: disable users from seeing other's processes
   ansible.builtin.lineinfile:
     path: /etc/sysctl.conf
     line: security.bsd.see_other_uids=0
-    regex: ^security.bsd.see_other_uids
+    regex: security.bsd.see_other_uids
 
 # https://docs.freebsd.org/en/books/handbook/security/  
 - name: disable users from seeing other group's processes
   ansible.builtin.lineinfile:
     path: /etc/sysctl.conf
     line: security.bsd.see_other_gids=0
-    regex: ^security.bsd.see_other_gids
+    regex: security.bsd.see_other_gids
 
 # https://bsdadventures.com/harden-freebsd/
 - name: security.bsd.unprivileged_read_msgbuf=0
   ansible.builtin.lineinfile:
     path: /etc/sysctl.conf
     line: security.bsd.unprivileged_read_msgbuf=0
-    regex: ^security.bsd.unprivileged_read_msgbuf
+    regex: security.bsd.unprivileged_read_msgbuf
 
 # https://bsdadventures.com/harden-freebsd/
 - name: security.bsd.unprivileged_proc_debug=0
   ansible.builtin.lineinfile:
     path: /etc/sysctl.conf
     line: security.bsd.unprivileged_proc_debug=0
-    regex: ^security.bsd.unprivileged_proc_debug
+    regex: security.bsd.unprivileged_proc_debug
 
 # https://bsdadventures.com/harden-freebsd/
 - name: kern.randompid=$(jot -r 1 9999)
   ansible.builtin.lineinfile:
     path: /etc/sysctl.conf
     line: kern.randompid=$(jot -r 1 9999)
-    regex: ^kern.randompid
+    regex: kern.randompid
 
 # https://bsdadventures.com/harden-freebsd/
 - name: security.bsd.stack_guard_page=1
   ansible.builtin.lineinfile:
     path: /etc/sysctl.conf
     line: security.bsd.stack_guard_page=1
-    regex: ^security.bsd.stack_guard_page
+    regex: security.bsd.stack_guard_page
+

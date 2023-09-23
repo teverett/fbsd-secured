@@ -5,34 +5,56 @@
 #  ansible.builtin.lineinfile:
 #    path: /boot/loader.conf
 #    line: kern.elf32.allow_wx=0
-#    regex: ^kern.elf32.allow_wx
+#    regex: kern.elf32.allow_wx
 
 - name: enable wx (elf64)
   ansible.builtin.lineinfile:
     path: /boot/loader.conf
     line: kern.elf64.allow_wx=0
-    regex: ^kern.elf64.allow_wx
+    regex: kern.elf64.allow_wx
 
 - name: enable alsr (elf32)
   ansible.builtin.lineinfile:
     path: /boot/loader.conf
     line: kern.elf32.aslr.enable=1
-    regex: ^kern.elf32.aslr.enable
+    regex: kern.elf32.aslr.enable
 
 - name: enable alsr (elf64)
   ansible.builtin.lineinfile:
     path: /boot/loader.conf
     line: kern.elf64.aslr.enable=1
-    regex: ^kern.elf64.aslr.enable
+    regex: kern.elf64.aslr.enable
 
 - name: enable pie (elf32)
   ansible.builtin.lineinfile:
     path: /boot/loader.conf
     line: kern.elf32.aslr.pie_enable=1
-    regex: ^kern.elf32.aslr.pie_enable
+    regex: kern.elf32.aslr.pie_enable
 
 - name: enable pie (elf64)
   ansible.builtin.lineinfile:
     path: /boot/loader.conf
     line: kern.elf64.aslr.pie_enable=1
-    regex: ^kern.elf64.aslr.pie_enable
+    regex: kern.elf64.aslr.pie_enable
+
+# https://forums.freebsd.org/threads/have-you-used-hardenedbsd-did-you-like-it.80187/#post-509491
+- name: security.bsd.allow_destructive_dtrace=0
+  ansible.builtin.lineinfile:
+    path: /boot/loader.conf
+    line: security.bsd.allow_destructive_dtrace=0
+    regex: security.bsd.allow_destructive_dtrace
+
+# https://forums.freebsd.org/threads/have-you-used-hardenedbsd-did-you-like-it.80187/#post-509491
+- name: kern.geom.label.disk_ident.enable="0"
+  ansible.builtin.lineinfile:
+    path: /boot/loader.conf
+    line: kern.geom.label.disk_ident.enable="0"
+    regex: kern.geom.label.disk_ident.enable
+
+# https://forums.freebsd.org/threads/have-you-used-hardenedbsd-did-you-like-it.80187/#post-509491
+- name: kern.geom.label.gptid.enable="0"
+  ansible.builtin.lineinfile:
+    path: /boot/loader.conf
+    line: kern.geom.label.gptid.enable="0"
+    regex: kern.geom.label.gptid.enable
+

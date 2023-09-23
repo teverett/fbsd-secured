@@ -30,18 +30,18 @@
     group: wheel
     mode: '0600'
 
-- name: start pf
-  ansible.builtin.service:
-    name: pf
-    state: started
+#- name: start pf
+#  ansible.builtin.service:
+#    name: pf
+#    state: started
 
-- name: Wait 600 seconds for target connection to become reachable/usable
-  ansible.builtin.wait_for_connection:
+#- name: Wait 600 seconds for target connection to become reachable/usable
+#  ansible.builtin.wait_for_connection:
 
-- name: start pflog
-  ansible.builtin.service:
-    name: pflog
-    state: started
+#- name: start pflog
+#  ansible.builtin.service:
+#    name: pflog
+#    state: started
 
 
 

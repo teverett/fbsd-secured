@@ -3,3 +3,8 @@
   ansible.builtin.command:
     cmd: "pkg install -y {{ item }}"
   with_items: "{{ packages }}"
+
+- name: upgrade packages
+  ansible.builtin.command:
+    cmd: "pkg upgrade -y"
+    

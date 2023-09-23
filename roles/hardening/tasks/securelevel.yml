@@ -2,10 +2,10 @@
   ansible.builtin.lineinfile:
     path: /etc/rc.conf
     line: kern_securelevel_enable="YES"
-    regex: ^kern_securelevel_enable
+    regex: kern_securelevel_enable
 
 - name: set kernel security level
   ansible.builtin.lineinfile:
     path: /etc/rc.conf
     line: kern_securelevel="2"
-    regex: ^kern_securelevel
+    regex: kern_securelevel

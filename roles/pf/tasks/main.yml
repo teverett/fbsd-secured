@@ -1,26 +1,26 @@
-- name: enable pf
+- name: enable pf in rc.conf
   ansible.builtin.lineinfile:
     path: /etc/rc.conf
     line: pf_enable="YES"
-    regex: ^pf_enable
+    regex: pf_enable
 
 - name: location of pf.conf
   ansible.builtin.lineinfile:
     path: /etc/rc.conf
     line: pf_rules="/etc/pf.conf"
-    regex: ^pf_rules
+    regex: pf_rules
 
-- name: enable pflog
+- name: enable pflog in rc.conf
   ansible.builtin.lineinfile:
     path: /etc/rc.conf
     line: pflog_enable="YES"
-    regex: ^pflog_enable
+    regex: pflog_enable
 
 - name: location of pflog
   ansible.builtin.lineinfile:
     path: /etc/rc.conf
     line: pflog_logfile="/var/log/pflog"
-    regex: ^pflog_logfile
+    regex: pflog_logfile
 
 - name: copy pf.conf
   ansible.builtin.copy:
@@ -30,18 +30,32 @@
     group: wheel
     mode: '0600'
 
-#- name: start pf
-#  ansible.builtin.service:
-#    name: pf
-#    state: started
+- name: load pf kernel module
+  ansible.builtin.command:
+    cmd: "kldload pf"
 
-#- name: Wait 600 seconds for target connection to become reachable/usable
-#  ansible.builtin.wait_for_connection:
+- name: enable pf
+  ansible.builtin.command:
+    cmd: "pfctl -e"
+  async: 45
+  poll: 5
 
-#- name: start pflog
-#  ansible.builtin.service:
-#    name: pflog
-#    state: started
+- name: Reset ssh connection
+  ansible.builtin.meta: reset_connection
+
+- name: load pf rules
+  ansible.builtin.command:
+    cmd: "pfctl -f /etc/pf.conf"
+  async: 45
+  poll: 5
+
+- name: Reset ssh connection
+  ansible.builtin.meta: reset_connection
+
+- name: start pflog
+  ansible.builtin.service:
+    name: pflog
+    state: started
 
 
 

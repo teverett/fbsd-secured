@@ -1,6 +1,6 @@
 
 [all]
-192.168.75.163
+192.168.75.158
 
 [all:vars]
 ansible_connection=ssh

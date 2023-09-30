@@ -16,7 +16,6 @@
     - pf
     - ntp
     - hardening
-    - node_exporter
     - pkg
     - user
     - reboot

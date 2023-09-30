@@ -16,9 +16,9 @@
     - pf
     - ntp
     - hardening
-    - monitor
+    - node_exporter
     - pkg
-    - java
     - user
     - reboot
+
 

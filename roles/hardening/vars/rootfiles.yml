@@ -28,11 +28,3 @@ rootfiles:
   - '/etc/rc.local'
   - '/etc/pf.conf'
 
-packages:
-  - sudo
-#  - fish
-  - screen
-  - bash
-
-# user to configure with the "user" task
-user: tom

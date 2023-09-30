@@ -1,6 +1,4 @@
 ---
-
-- hosts: all
   become: true
   become_method: su
   become_user: root
@@ -10,6 +8,8 @@
     raw: 'pkg install -y python'
     args:
       executable: /bin/sh
+
+- hosts: basic
   vars_files:
     - vars.yml
   roles:

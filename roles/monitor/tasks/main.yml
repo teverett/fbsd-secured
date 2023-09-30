@@ -19,18 +19,6 @@
     line: 'pass in proto tcp from <rfc1918> to port { 9100 }'
     insertafter: '# -- incremental pass rules --'
 
-- name: enable node_exporter traffic in pf (comment)
-  ansible.builtin.lineinfile:
-    path: /etc/pf.conf
-    line: '# enable node_exporter'
-    insertafter: '# -- incremental pass rules --'
-
-- name: add blank line
-  ansible.builtin.lineinfile:
-    path: /etc/pf.conf
-    line: ' '
-    insertafter: '# -- incremental pass rules --'
-
 # don't restart the pf service: that disconnects ssh
 - name: restart pf
   ansible.builtin.shell:

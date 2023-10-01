@@ -1,8 +1,6 @@
 
 [all]
 
-[java]
-192.168.75.159
 
 [all:vars]
 ansible_connection=ssh

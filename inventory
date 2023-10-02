@@ -1,7 +1,7 @@
 
 [all]
 monitor
-
+logs
 
 [all:vars]
 ansible_connection=ssh

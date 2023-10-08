@@ -2,6 +2,7 @@
 [all]
 monitor
 logs
+radius
 
 [all:vars]
 ansible_connection=ssh

@@ -19,7 +19,6 @@ rootfiles:
   - '/etc/syslog.conf'
   - '/etc/ttys'
   - '/etc/crontab'
-#  - '/usr/bin/crontab'
   - '/usr/bin/at'
   - '/usr/bin/atq'
   - '/usr/bin/atrm'
@@ -27,4 +26,3 @@ rootfiles:
   - '/var/log'
   - '/etc/rc.local'
   - '/etc/pf.conf'
-

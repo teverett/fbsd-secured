@@ -7,3 +7,8 @@
 - name: rebuild login database
   ansible.builtin.command: cap_mkdb /etc/login.conf
 
+#- name: enable password complexity controls
+#  ansible.builtin.lineinfile:
+#    path: /etc/pam.d/passwd
+#    line: 'password        requisite       pam_passwdqc.so         min=disabled,disabled,disabled,12,10 similar=deny retry=3 enforce=users'
+#    search_string: 'pam_passwdqc.so'

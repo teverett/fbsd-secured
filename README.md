@@ -57,8 +57,10 @@ fbsd-secured uses ideas from these sites:
 
 `sh run.sh`.  Provide the login password for the account "ansible" and the root password.
 
-## TOTO
+## TODO
 
 * Security Event Auditing
 * Mandatory Access Control
 * User Classes
+* Enforce password complexity
+

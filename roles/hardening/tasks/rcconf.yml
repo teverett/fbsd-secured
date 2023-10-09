@@ -40,11 +40,11 @@
     line: portmap_enable=”NO”
     regex: ^portmap_enable
 
-- name: disable syslog logging to network
-  ansible.builtin.lineinfile:
-    path: /etc/rc.conf
-    line: syslogd_flags=”-ss”
-    regex: ^syslogd_flags
+#- name: disable syslog logging to network
+#  ansible.builtin.lineinfile:
+#    path: /etc/rc.conf
+#    line: syslogd_flags=”-s”
+#    regex: ^syslogd_flags
 
 - name: disable dumpdev
   ansible.builtin.lineinfile:

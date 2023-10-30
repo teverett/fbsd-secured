@@ -26,3 +26,4 @@ rootfiles:
   - '/var/log'
   - '/etc/rc.local'
   - '/etc/pf.conf'
+  

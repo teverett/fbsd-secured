@@ -1,8 +1,16 @@
 
 [all]
-monitor
-logs
-radius
+#monitor
+#ldap2
+#sandbox
+#minetest
+#jump
+#db
+#ipdb
+#yogi
+#mongo
+ldap1
+jenkins
 
 [all:vars]
 ansible_connection=ssh

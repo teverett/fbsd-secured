@@ -84,10 +84,10 @@
     regex: security.bsd.unprivileged_proc_debug
 
 # https://bsdadventures.com/harden-freebsd/
-- name: kern.randompid=$(jot -r 1 9999)
+- name: kern.randompid=1
   ansible.builtin.lineinfile:
     path: /etc/sysctl.conf
-    line: kern.randompid=$(jot -r 1 9999)
+    line: kern.randompid=77
     regex: kern.randompid
 
 # https://bsdadventures.com/harden-freebsd/

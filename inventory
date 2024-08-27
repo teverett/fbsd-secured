@@ -13,6 +13,8 @@ ldap1
 jenkins
 jenkins-n1
 jenkins-n2
+mc
+
 
 [all:vars]
 ansible_connection=ssh

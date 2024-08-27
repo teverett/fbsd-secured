@@ -70,11 +70,11 @@
     regex: security.bsd.see_other_gids
 
 # https://bsdadventures.com/harden-freebsd/
-- name: security.bsd.unprivileged_read_msgbuf=0
-  ansible.builtin.lineinfile:
-    path: /etc/sysctl.conf
-    line: security.bsd.unprivileged_read_msgbuf=0
-    regex: security.bsd.unprivileged_read_msgbuf
+#- name: security.bsd.unprivileged_read_msgbuf=0
+#  ansible.builtin.lineinfile:
+#    path: /etc/sysctl.conf
+#    line: security.bsd.unprivileged_read_msgbuf=0
+#    regex: security.bsd.unprivileged_read_msgbuf
 
 # https://bsdadventures.com/harden-freebsd/
 - name: security.bsd.unprivileged_proc_debug=0
@@ -84,11 +84,11 @@
     regex: security.bsd.unprivileged_proc_debug
 
 # https://bsdadventures.com/harden-freebsd/
-- name: kern.randompid=1
-  ansible.builtin.lineinfile:
-    path: /etc/sysctl.conf
-    line: kern.randompid=77
-    regex: kern.randompid
+#- name: kern.randompid=1
+#  ansible.builtin.lineinfile:
+#    path: /etc/sysctl.conf
+#    line: kern.randompid=77
+#    regex: kern.randompid
 
 # https://bsdadventures.com/harden-freebsd/
 - name: security.bsd.stack_guard_page=1

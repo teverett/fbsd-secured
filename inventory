@@ -1,8 +1,8 @@
 
 [all]
 #monitor
-#ldap2
-#sandbox
+ldap2
+sandbox
 #minetest
 #jump
 #db

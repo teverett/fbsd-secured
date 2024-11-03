@@ -22,17 +22,17 @@
     line: inetd_enable=””
     regex: ^inetd_enable
 
-- name: disable NFS server
-  ansible.builtin.lineinfile:
-    path: /etc/rc.conf
-    line: nfs_server_enable=”NO”
-    regex: ^nfs_server_enable
+#- name: disable NFS server
+#  ansible.builtin.lineinfile:
+#    path: /etc/rc.conf
+#    line: nfs_server_enable=”NO”
+#    regex: ^nfs_server_enable
 
-- name: disable NFS client
-  ansible.builtin.lineinfile:
-    path: /etc/rc.conf
-    line: nfs_client_enable=”NO”
-    regex: ^nfs_client_enable
+#- name: disable NFS client
+#  ansible.builtin.lineinfile:
+#    path: /etc/rc.conf
+#    line: nfs_client_enable=”NO”
+#    regex: ^nfs_client_enable
 
 - name: disable portmap
   ansible.builtin.lineinfile:

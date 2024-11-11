@@ -57,4 +57,21 @@
     path: /etc/rc.conf
     line: update_motd="NO"
     regex: ^update_motd
-  
+
+- name: enable background fsck
+  ansible.builtin.lineinfile:
+    path: /etc/rc.conf
+    line: background_fsck="YES"
+    regex: ^background_fsck
+
+- name: -y on background fsck
+  ansible.builtin.lineinfile:
+    path: /etc/rc.conf
+    line: fsck_y_enable="YES"
+    regex: ^fsck_y_enable
+
+- name: -f on background fsck
+  ansible.builtin.lineinfile:
+    path: /etc/rc.conf
+    line: fsck_y_flags="-f"
+    regex: ^fsck_y_flags

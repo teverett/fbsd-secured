@@ -15,7 +15,8 @@ jenkins-n1
 jenkins-n2
 mc
 mailcradle
-
+mailcradle2
+db2
 
 [all:vars]
 ansible_connection=ssh

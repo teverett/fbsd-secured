@@ -1,12 +1,12 @@
 
 [all]
-#monitor
+monitor
 ldap2
 sandbox
 #minetest
 #jump
 #db
-#ipdb
+ipdb
 #yogi
 #mongo
 ldap1

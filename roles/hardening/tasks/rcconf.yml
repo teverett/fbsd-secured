@@ -7,7 +7,7 @@
 - name: disable sendmail
   ansible.builtin.lineinfile:
     path: /etc/rc.conf
-    line: sendmail_enable=”YES”
+    line: sendmail_enable=”TRUE”
     regex: ^sendmail_enable
 
 - name: sendmail in queue mode

@@ -17,6 +17,9 @@ mc
 mailcradle
 mailcradle2
 db2
+mongo
+wurld1
+m2
 
 [all:vars]
 ansible_connection=ssh

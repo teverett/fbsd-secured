@@ -22,6 +22,7 @@ wurld1
 m2
 couch1
 gitserver
+mail
 
 [all:vars]
 ansible_connection=ssh

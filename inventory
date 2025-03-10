@@ -23,6 +23,8 @@ m2
 couch1
 gitserver
 mail
+monit
+backup1
 
 [all:vars]
 ansible_connection=ssh

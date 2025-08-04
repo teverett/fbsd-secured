@@ -25,6 +25,7 @@ gitserver
 mail
 monit
 backup1
+ldap3
 
 [all:vars]
 ansible_connection=ssh

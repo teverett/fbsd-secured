@@ -11,7 +11,7 @@ fbsd-secured is an [Ansible](https://www.ansible.com/) playbook which provides i
 * Disabling inetd and NFS
 * sendmail in queue mode
 * Clearing /tmp on reboot
-* Firewalling IP6
+* Firewalling IPv6
 * ALSR, PIE and WX
 * Restricting cron configurations to root
 * Kernel [securelevel](https://man.freebsd.org/cgi/man.cgi?query=securelevel&apropos=0&sektion=0&manpath=FreeBSD+13.2-RELEASE&arch=default&format=html) 2

@@ -84,16 +84,15 @@
     regex: security.bsd.unprivileged_proc_debug
 
 # https://bsdadventures.com/harden-freebsd/
-#- name: kern.randompid=1
-#  ansible.builtin.lineinfile:
-#    path: /etc/sysctl.conf
-#    line: kern.randompid=77
-#    regex: kern.randompid
-
-# https://bsdadventures.com/harden-freebsd/
 - name: security.bsd.stack_guard_page=1
   ansible.builtin.lineinfile:
     path: /etc/sysctl.conf
     line: security.bsd.stack_guard_page=1
     regex: security.bsd.stack_guard_page
 
+# https://yorickpeterse.com/articles/a-brief-look-at-freebsd/
+- name: kern.randompid=1
+  ansible.builtin.lineinfile:
+    path: /etc/sysctl.conf
+    line: kern.randompid=1
+    regex: kern.randompid

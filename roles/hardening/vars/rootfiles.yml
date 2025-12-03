@@ -3,7 +3,6 @@
 
 rootfiles:
   - '/etc/fstab'
-  - '/etc/ftpusers'
   - '/etc/group'
   - '/etc/hosts'
   - '/etc/hosts.allow'

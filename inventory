@@ -1,5 +1,6 @@
 
 [all]
+havenbound
 monitor
 ldap2
 sandbox
@@ -29,9 +30,11 @@ ldap3
 nut
 wurld1.ascot.khubla.lan
 mysql
+minecraft
+voxel1
 
 [all:vars]
 ansible_connection=ssh
 ansible_user=ansible
-ansible_python_interpreter=/usr/local/bin/python3.11
+ansible_python_interpreter=/usr/local/bin/python3
 

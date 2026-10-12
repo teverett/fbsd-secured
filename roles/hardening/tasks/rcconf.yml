@@ -7,7 +7,7 @@
 - name: disable sendmail
   ansible.builtin.lineinfile:
     path: /etc/rc.conf
-    line: sendmail_enable=”NO”
+    line: sendmail_enable=”NONE”
     regex: ^sendmail_enable
 
 - name: sendmail in queue mode
@@ -19,7 +19,7 @@
 - name: disable inetd
   ansible.builtin.lineinfile:
     path: /etc/rc.conf
-    line: inetd_enable=""
+    line: inetd_enable="NO"
     regex: ^inetd_enable
 
 #- name: disable NFS server

@@ -2,76 +2,76 @@
   ansible.builtin.lineinfile:
     path: /etc/rc.conf
     line: clear_tmp_enable="YES"
-    regex: ^clear_tmp_enable
+    regexp: ^clear_tmp_enable
 
 - name: disable sendmail
   ansible.builtin.lineinfile:
     path: /etc/rc.conf
-    line: sendmail_enable=”NONE”
-    regex: ^sendmail_enable
+    line: sendmail_enable="NONE"
+    regexp: ^sendmail_enable
 
 - name: sendmail in queue mode
   ansible.builtin.lineinfile:
     path: /etc/rc.conf
     line: sendmail_flags="-q1m"
-    regex: ^sendmail_flags
+    regexp: ^sendmail_flags
 
 - name: disable inetd
   ansible.builtin.lineinfile:
     path: /etc/rc.conf
     line: inetd_enable="NO"
-    regex: ^inetd_enable
+    regexp: ^inetd_enable
 
 #- name: disable NFS server
 #  ansible.builtin.lineinfile:
 #    path: /etc/rc.conf
-#    line: nfs_server_enable=”NO”
-#    regex: ^nfs_server_enable
+#    line: nfs_server_enable="NO"
+#    regexp: ^nfs_server_enable
 
 #- name: disable NFS client
 #  ansible.builtin.lineinfile:
 #    path: /etc/rc.conf
-#    line: nfs_client_enable=”NO”
-#    regex: ^nfs_client_enable
+#    line: nfs_client_enable="NO"
+#    regexp: ^nfs_client_enable
 
 - name: disable portmap
   ansible.builtin.lineinfile:
     path: /etc/rc.conf
-    line: portmap_enable=”NO”
-    regex: ^portmap_enable
+    line: portmap_enable="NO"
+    regexp: ^portmap_enable
 
 #- name: disable syslog logging to network
 #  ansible.builtin.lineinfile:
 #    path: /etc/rc.conf
-#    line: syslogd_flags=”-s”
-#    regex: ^syslogd_flags
+#    line: syslogd_flags="-s"
+#    regexp: ^syslogd_flags
 
 - name: disable dumpdev
   ansible.builtin.lineinfile:
     path: /etc/rc.conf
     line: dumpdev="NO"
-    regex: ^dumpdev
+    regexp: ^dumpdev
 
 - name: don't update MOTD on boot
   ansible.builtin.lineinfile:
     path: /etc/rc.conf
     line: update_motd="NO"
-    regex: ^update_motd
+    regexp: ^update_motd
 
 - name: enable background fsck
   ansible.builtin.lineinfile:
     path: /etc/rc.conf
     line: background_fsck="YES"
-    regex: ^background_fsck
+    regexp: ^background_fsck
 
 - name: -y on background fsck
   ansible.builtin.lineinfile:
     path: /etc/rc.conf
     line: fsck_y_enable="YES"
-    regex: ^fsck_y_enable
+    regexp: ^fsck_y_enable
 
 - name: -f on background fsck
   ansible.builtin.lineinfile:
     path: /etc/rc.conf
     line: fsck_y_flags="-f"
-    regex: ^fsck_y_flags
+    regexp: ^fsck_y_flags

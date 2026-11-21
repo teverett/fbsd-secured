@@ -24,3 +24,6 @@
     path: "{{ item }}"
     mode: 'o='
   with_items: "{{ rootfiles }}"
+  # Not every path in rootfiles.yml is guaranteed to exist on every FreeBSD install
+  # (e.g. /etc/hosts.equiv, /etc/hosts.lpd) -- don't abort the whole run over one missing file.
+  ignore_errors: true

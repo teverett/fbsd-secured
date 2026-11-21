@@ -1,0 +1,20 @@
+# https://man.freebsd.org/cgi/man.cgi?security
+- name: copy devfs ruleset restricting bpf/mem/kmem to root
+  ansible.builtin.copy:
+    src: devfs.rules
+    dest: /etc/devfs.rules
+    owner: root
+    group: wheel
+    mode: '0644'
+
+- name: enable loading of devfs rulesets
+  ansible.builtin.lineinfile:
+    path: /etc/rc.conf
+    line: devfs_load_rulesets="YES"
+    regexp: ^devfs_load_rulesets
+
+- name: apply custom devfs ruleset to the system devfs mount
+  ansible.builtin.lineinfile:
+    path: /etc/rc.conf
+    line: devfs_system_ruleset="devfsrules_securelevel"
+    regexp: ^devfs_system_ruleset

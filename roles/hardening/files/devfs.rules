@@ -1,0 +1,8 @@
+# https://man.freebsd.org/cgi/man.cgi?security
+# bpf(4) is a packet sniffer; /dev/mem and /dev/kmem expose kernel memory
+# (and via it the crypted password file / PTY keystrokes). Restrict all
+# three to root only instead of leaving them group-readable.
+[devfsrules_securelevel=15]
+add path 'bpf*' mode 0600
+add path 'mem' mode 0600
+add path 'kmem' mode 0600

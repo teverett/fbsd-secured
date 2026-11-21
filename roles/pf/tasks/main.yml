@@ -2,25 +2,25 @@
   ansible.builtin.lineinfile:
     path: /etc/rc.conf
     line: pf_enable="YES"
-    regex: pf_enable
+    regexp: pf_enable
 
 - name: location of pf.conf
   ansible.builtin.lineinfile:
     path: /etc/rc.conf
     line: pf_rules="/etc/pf.conf"
-    regex: pf_rules
+    regexp: pf_rules
 
 - name: enable pflog in rc.conf
   ansible.builtin.lineinfile:
     path: /etc/rc.conf
     line: pflog_enable="YES"
-    regex: pflog_enable
+    regexp: pflog_enable
 
 - name: location of pflog
   ansible.builtin.lineinfile:
     path: /etc/rc.conf
     line: pflog_logfile="/var/log/pflog"
-    regex: pflog_logfile
+    regexp: pflog_logfile
 
 - name: copy pf.conf
   ansible.builtin.copy:
@@ -40,7 +40,7 @@
   ignore_errors: true
   no_log: true
   async: 60
-  poll: 2
+  poll: 0
 
 - name: Reset ssh connection
   ansible.builtin.meta: reset_connection
@@ -49,7 +49,7 @@
   ansible.builtin.command:
     cmd: "pfctl -f /etc/pf.conf"
   async: 45
-  poll: 5
+  poll: 0
 
 - name: Reset ssh connection
   ansible.builtin.meta: reset_connection

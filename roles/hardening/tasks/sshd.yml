@@ -1,0 +1,37 @@
+# sshd_config(5) hardening beyond the password-login setup provision_ec2.yml already does.
+# Must run before rootfiles.yml locks down /etc/ssh/sshd_config's permissions.
+- name: Set ClientAliveInterval
+  ansible.builtin.lineinfile:
+    path: /etc/ssh/sshd_config
+    regexp: '^#?ClientAliveInterval\s'
+    line: 'ClientAliveInterval 300'
+  register: sshd_config_change_1
+
+- name: Set ClientAliveCountMax
+  ansible.builtin.lineinfile:
+    path: /etc/ssh/sshd_config
+    regexp: '^#?ClientAliveCountMax\s'
+    line: 'ClientAliveCountMax 2'
+  register: sshd_config_change_2
+
+- name: Set PermitEmptyPasswords no
+  ansible.builtin.lineinfile:
+    path: /etc/ssh/sshd_config
+    regexp: '^#?PermitEmptyPasswords\s'
+    line: 'PermitEmptyPasswords no'
+  register: sshd_config_change_3
+
+- name: Set StrictModes yes
+  ansible.builtin.lineinfile:
+    path: /etc/ssh/sshd_config
+    regexp: '^#?StrictModes\s'
+    line: 'StrictModes yes'
+  register: sshd_config_change_4
+
+# Restarting sshd doesn't drop already-established sessions (including this one), only
+# re-spawns the listener for new connections.
+- name: Restart sshd if sshd_config changed
+  ansible.builtin.service:
+    name: sshd
+    state: restarted
+  when: sshd_config_change_1.changed or sshd_config_change_2.changed or sshd_config_change_3.changed or sshd_config_change_4.changed

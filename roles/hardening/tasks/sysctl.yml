@@ -96,3 +96,56 @@
     path: /etc/sysctl.conf
     line: kern.randompid=1
     regexp: kern.randompid
+
+# https://man.freebsd.org/cgi/man.cgi?query=security -- drops TCP packets with both SYN and FIN
+# set, a combination real connections never use but OS-fingerprinting/firewall-evasion scans do.
+- name: net.inet.tcp.drop_synfin=1
+  ansible.builtin.lineinfile:
+    path: /etc/sysctl.conf
+    line: net.inet.tcp.drop_synfin=1
+    regexp: net.inet.tcp.drop_synfin
+
+# https://man.freebsd.org/cgi/man.cgi?query=ip -- randomizes the IP ID field instead of using a
+# predictable counter, hindering traffic analysis/OS fingerprinting.
+- name: net.inet.ip.random_id=1
+  ansible.builtin.lineinfile:
+    path: /etc/sysctl.conf
+    line: net.inet.ip.random_id=1
+    regexp: net.inet.ip.random_id
+
+# https://man.freebsd.org/cgi/man.cgi?query=security -- stop users from hardlinking to files
+# they don't own, closing a privilege-escalation/race vector; pairs with see_other_uids/gids.
+- name: security.bsd.hardlink_check_uid=1
+  ansible.builtin.lineinfile:
+    path: /etc/sysctl.conf
+    line: security.bsd.hardlink_check_uid=1
+    regexp: security.bsd.hardlink_check_uid
+
+- name: security.bsd.hardlink_check_gid=1
+  ansible.builtin.lineinfile:
+    path: /etc/sysctl.conf
+    line: security.bsd.hardlink_check_gid=1
+    regexp: security.bsd.hardlink_check_gid
+
+# https://man.freebsd.org/cgi/man.cgi?query=security -- don't dump core for setuid/setgid
+# processes, avoiding sensitive memory being written to disk; pairs with dumpdev=NO in rc.conf.
+- name: kern.sugid_coredump=0
+  ansible.builtin.lineinfile:
+    path: /etc/sysctl.conf
+    line: kern.sugid_coredump=0
+    regexp: kern.sugid_coredump
+
+# https://man.freebsd.org/cgi/man.cgi?query=mount -- only root may mount/unmount filesystems
+# (e.g. removable media), rather than any user via vfs.usermount.
+- name: vfs.usermount=0
+  ansible.builtin.lineinfile:
+    path: /etc/sysctl.conf
+    line: vfs.usermount=0
+    regexp: vfs.usermount
+
+# https://man.freebsd.org/cgi/man.cgi?query=security
+- name: kern.ipc.shm_allow_removed=0
+  ansible.builtin.lineinfile:
+    path: /etc/sysctl.conf
+    line: kern.ipc.shm_allow_removed=0
+    regexp: kern.ipc.shm_allow_removed

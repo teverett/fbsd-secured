@@ -70,11 +70,11 @@
     regexp: security.bsd.see_other_gids
 
 # https://bsdadventures.com/harden-freebsd/
-#- name: security.bsd.unprivileged_read_msgbuf=0
-#  ansible.builtin.lineinfile:
-#    path: /etc/sysctl.conf
-#    line: security.bsd.unprivileged_read_msgbuf=0
-#    regexp: security.bsd.unprivileged_read_msgbuf
+- name: security.bsd.unprivileged_read_msgbuf=0
+  ansible.builtin.lineinfile:
+    path: /etc/sysctl.conf
+    line: security.bsd.unprivileged_read_msgbuf=0
+    regexp: security.bsd.unprivileged_read_msgbuf
 
 # https://bsdadventures.com/harden-freebsd/
 - name: security.bsd.unprivileged_proc_debug=0

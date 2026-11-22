@@ -16,7 +16,6 @@ fbsd-secured is an [Ansible](https://www.ansible.com/) playbook which provides i
 * Restricting cron configurations to root
 * Kernel [securelevel](https://man.freebsd.org/cgi/man.cgi?query=securelevel&apropos=0&sektion=0&manpath=FreeBSD+13.2-RELEASE&arch=default&format=html) 2
 * Blowfish password encryption
-* [node_exporter](https://github.com/prometheus/node_exporter) enabled
 
 ## License
 
